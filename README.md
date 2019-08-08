@@ -15,4 +15,5 @@ python epistasis_submit_DAGman_v7.py xxx -g 600 -m 1
 
 * python epistasis_submit_DAGman_v7_osg.py xxx -g 600 -m 1  (if run script in osg, but need to upload file to squid folder first)
 * to run in osg, run file in chtc first and remove job and then run it in osg (the same file name, but using _osg.py to run).
+* need to change the squid/username to your username in chtc.
 * xxx is the plink file name
