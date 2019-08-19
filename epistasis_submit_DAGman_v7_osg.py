@@ -483,8 +483,8 @@ if __name__ == '__main__':
 		'condition': ['', '--condition %s' % condition][condition is not None],
 		'use_memory': memory,
 		'use_chtc': ['requirements = (OSGVO_OS_STRING == "RHEL 6" || OSGVO_OS_STRING == "RHEL 7")', '']['chtc' in pools],
-		'use_osg': ['', '+wantGlidein = true']['osg' in pools],
-		'use_uw': ['', '+wantFlocking = true']['uw' in pools],
+		'use_osg': ['', '+ProjectName= osg.UWMadison_Parks']['osg' in pools],
+		'use_uw': ['', '+ProjectName= osg.UWMadison_Parks']['uw' in pools],
 		'max_idle_jobs': max_idle_jobs
 	})
 

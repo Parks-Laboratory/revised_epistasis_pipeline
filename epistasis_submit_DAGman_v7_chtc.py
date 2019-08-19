@@ -132,11 +132,11 @@ def write_submission_file(params, flags):
 
 	should_transfer_files = YES
 	when_to_transfer_output = ON_EXIT
-	transfer_input_files = http://proxy.chtc.wisc.edu/SQUID/%(username)s/%(squid_zip)s
+	transfer_input_files = http://proxy.chtc.wisc.edu/SQUID/zli769/%(squid_zip)s
 
 	request_cpus = 1
-	request_memory = %(use_memory)sGB
-	request_disk = 1 GB
+	request_memory = 4 GB
+	request_disk = 2 GB
 
 	# if Condor puts job on hold, retry every 5 minutes, up to 4 times
 	periodic_release = ( JobRunCount < 10 ) && ( time() - EnteredCurrentStatus > 60*5 )
@@ -278,8 +278,8 @@ def package_SQUID_files(params):
 	subprocess.call('gzip < %(squid_archive)s > %(squid_zip)s' % params, shell = True)
 	# place compressed archive file in the user's SQUID directory
 	subprocess.call('rm %(squid_archive)s' % params, shell = True)
-	if(subprocess.call('mv %(squid_zip)s /squid/%(username)s' % params, shell = True)):
-		sys.exit('Failed to create %(squid_zip)s and copy it to squid directory' % params)
+	# if(subprocess.call('mv %(squid_zip)s /squid/%(username)s' % params, shell = True)):
+	#	sys.exit('Failed to create %(squid_zip)s and copy it to squid directory' % params)
 
 def submit_jobs(params):
     # submit jobs to condor
