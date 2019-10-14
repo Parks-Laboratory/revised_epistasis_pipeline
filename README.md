@@ -1,5 +1,10 @@
 # revised_epistasis_pipeline
 
+
+epistasis_submit.py  is used for re-run failed filed  tasks.
+
+
+
 make scripts folder in home directory. This will contain (atlas.tar python.tar and two of node.py files).
 
 
